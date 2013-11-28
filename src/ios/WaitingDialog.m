@@ -1,8 +1,8 @@
 //
 //  WaitingDialog.m
-// 
 //
 //  Created by Guido Sabatini in 2012
+//  Modified by @bormansquirrel 28/11/2013
 //
 
 #import "WaitingDialog.h"
@@ -23,7 +23,7 @@
 
 -(UIAlertView *)waitingDialog {
     if (!_waitingDialog) {
-        _waitingDialog = [[[UIAlertView alloc] initWithTitle:@"" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
+        _waitingDialog = [[UIAlertView alloc] initWithTitle:@"" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
     }
     return _waitingDialog;
 }
@@ -75,7 +75,6 @@
     indicator.center = CGPointMake(self.waitingDialog.bounds.size.width / 2, self.waitingDialog.bounds.size.height - 50);
     [indicator startAnimating];
     [self.waitingDialog addSubview:indicator];
-    [indicator release];
 }
 
 -(void)hideWaitingDialog {
@@ -85,6 +84,5 @@
     }
 }
 
-
-
 @end
+
