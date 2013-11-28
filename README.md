@@ -1,3 +1,20 @@
+### Updated 11/28/2013:
+### Inspired by https://raw.github.com/dianaliu/NotificationEx
+- To install, `cordova plugin add https://github.com/bormansquirrel/WaitingDialog.git`
+  - Oh, but ya know sometimes things get out of sync so you have to re-add the ios platform. Thank you [SO] (http://stackoverflow.com/a/19733423)!
+  ```bash
+
+    #!/bin/bash
+    echo "Killing xcode..."
+    kill $(ps aux | grep 'Xcode' | awk '{print $2}')
+    rm -r platforms/ios
+    rm plugins/ios.json
+    cordova platforms add ios
+    cordova build ios
+    open platforms/ios/*.xcodeproj
+  ``` 
+
+- To remove, `cordova plugin rm org.apache.cordova.plugins.WaitingDialog`
 # Waiting dialog for iOS applications
 
 _Created by `Guido Sabatini`_
